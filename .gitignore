@@ -1,0 +1,7 @@
+*.pyc
+.serverless
+.npmignore
+node_modules
+.requirements
+requirements.py
+.idea
