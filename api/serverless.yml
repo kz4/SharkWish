@@ -20,6 +20,11 @@ service: api
 provider:
   name: aws
   runtime: python2.7
+  memorySize: 128
+  timeout: 12
+
+# plugins:
+#   - serverless-python-requirements
 
 # you can overwrite defaults here
 #  stage: dev
@@ -55,7 +60,183 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    description: Admin Add ONE user (No confirmation required).
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+          cors: true
+  create_user:
+    description: Admin Add ONE user (No confirmation required).
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.add_user
+    events:
+      - http:
+          path: users/adminsignup
+          method: post
+          cors: true
+  signup_user:
+    description: Signs up ONE user.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.signup_user
+    events:
+      - http:
+          path: users
+          method: post
+          cors: true
+  validate_user:
+    description: Validates ONE user.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.validate_user
+    events:
+      - http:
+          path: users/validate
+          method: post
+          cors: true
+  login:
+    description: Login endpoint
+    handler: endpoints/auth.login
+    events:
+      - http:
+          path: auth/login
+          method: post
+          cors: true
+  get_user:
+    description: Gets one user.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.get_user
+    events:
+      - http:
+          path: users/{username}
+          method: get
+          cors: true
+  search_user_list:
+    description: Gets muti users.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.get_user_list
+    events:
+      - http:
+          path: users/getuserlist
+          method: post
+          cors: true
+  delete_user:
+    description: Deletes ONE user.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.delete_user
+    events:
+      - http:
+          path: users/{username}
+          method: delete
+          cors: true
+  update_user:
+    description: Updates one user.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.update_user
+    events:
+      - http:
+          path: users/{username}
+          method: put
+          cors: true
+  list_user:
+    description: List ALL users.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.list_user
+    events:
+      - http:
+          path: users
+          method: get
+          cors: true
+  resend_code:
+    description: Resend user sign up confirmation code.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.resend
+    events:
+      - http:
+          path: users/{username}/resend
+          method: post
+          cors: true
+  get_dashboard_for_user:
+    description: Gets a users dashboard configuration for a project
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.get_dashboard_for_user
+    events:
+      - http:
+          path: users/dashboard/{user_id}/{project_id}
+          method: get
+          cors: true
+  save_dashboard_for_user:
+    description: Saves a users dashboard configuration for a project
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.save_dashboard_for_user
+    events:
+      - http:
+          path: users/dashboard/{user_id}/{project_id}
+          method: post
+          cors: true
+  refresh_user:
+    description: Refreshes a users ID and access token
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.refresh_user
+    events:
+      - http:
+          path: auth/refresh
+          method: post
+          cors: true
+  logout_user:
+    description: Logs user out
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.logout_user
+    events:
+      - http:
+          path: auth/logout
+          method: post
+          cors: true
+  token_validate:
+    description: Validates users access token
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.token_validate
+    events:
+      - http:
+          path: auth/token
+          method: post
+          cors: true
+  forgot_password:
+    description: Resets password of ONE user.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.forgot_password
+    events:
+      - http:
+          path: users/{username}/forgotpassword
+          method: post
+          cors: true
+  confirm_forgot_password:
+    description: Resets password of ONE user.
+    memorySize: 128
+    timeout: 12
+    handler: endpoints/users.confirm_forgot_password
+    events:
+      - http:
+          path: users/confirmforgotpassword
+          method: post
+          cors: true
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
