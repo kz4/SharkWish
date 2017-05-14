@@ -1,0 +1,7 @@
+{
+	"pathParameters":
+    {
+    	"username":"apidemo2",
+        "group_name": "velo_animal4"
+    }
+}

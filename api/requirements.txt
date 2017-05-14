@@ -1,0 +1,6 @@
+pynamodb
+boto3
+nose
+urllib3
+PyJWT
+cryptography

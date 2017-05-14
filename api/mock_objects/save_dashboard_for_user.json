@@ -1,0 +1,16 @@
+{
+	"pathParameters":
+	{
+		"user_id" : "dc0ca698-a882-4663-8bf3-e3c26c7121a3",
+		"project_id" : "3f0369b9-f2ab-49c2-a093-dc9142e04d90"
+	},
+	"body" :
+		{"containers" :
+			[{"container_type": "TestContainerA",
+			"data_grid":
+				{"h": 1, "maxW": 1, "minW": 1, "w": 1, "x": 1, "y": 1}},
+			{"container_type": "TestContainerB",
+			"data_grid":
+				{"h": 1, "maxW": 1, "minW": 1, "w": 1, "x": 1, "y": 1}}]
+	}
+}

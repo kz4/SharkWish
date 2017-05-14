@@ -1,0 +1,10 @@
+{
+	"pathParameters":
+    {
+        "group_name": "velo_animal4"
+    },
+    "body":
+    {
+    	"username":"devil"
+   	}
+}

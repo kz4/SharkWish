@@ -1,0 +1,10 @@
+{
+	"pathParameters":
+	{
+		"username" : "jiachentest"
+	},
+	"body" :
+	{
+		"team_name" : "test_demo"
+	}
+}

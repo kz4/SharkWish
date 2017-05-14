@@ -11,7 +11,7 @@ from cryptography.hazmat.primitives.asymmetric.rsa import RSAPublicNumbers
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 
-client = boto3.client('cognito-idp', region_name='us-west-2')
+client = boto3.client('cognito-idp', region_name='us-east-1')
 clientID = settings.COGNITO_CLIENT_ID
 poolID = settings.COGNITO_POOL_ID
 

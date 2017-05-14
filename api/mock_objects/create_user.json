@@ -1,0 +1,10 @@
+{
+    "body":
+    {
+        "username":"apidemo3",
+        "password":"123456789",
+        "email": "zkcneu@gmail.com",
+        "first_name": "velo",
+        "last_name": "api"
+    }
+}

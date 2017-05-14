@@ -23,8 +23,8 @@ provider:
   memorySize: 128
   timeout: 12
 
-# plugins:
-#   - serverless-python-requirements
+plugins:
+  - serverless-python-requirements
 
 # you can overwrite defaults here
 #  stage: dev
@@ -50,13 +50,12 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
-#  include:
-#    - include-me.py
+package:
+ include:
+   - requirements.py
 #    - include-me-dir/**
-#  exclude:
-#    - exclude-me.py
-#    - exclude-me-dir/**
+ exclude:
+   - node_modules
 
 functions:
   hello:

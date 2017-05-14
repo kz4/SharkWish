@@ -1,0 +1,38 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.0",
+      "eventTime": "2017-02-26T23:41:40.717Z",
+      "requestParameters": {
+        "sourceIPAddress": "50.177.119.103"
+      },
+      "s3": {
+        "configurationId": "a320a613-973c-4fed-845e-3d8f5499ed4e",
+        "object": {
+          "eTag": "d41d8cd98f00b204e9800998ecf8427e",
+          "sequencer": "0058B367B4A7BD1DE8",
+          "key": "1/projects/000_project_id/uploads/scottish_fold.jpg",
+          "size": 0
+        },
+        "bucket": {
+          "arn": "arn:aws:s3:::velo-dev-uploads",
+          "name": "velo-dev-uploads",
+          "ownerIdentity": {
+            "principalId": "A1VMQ1Q5THTWA8"
+          }
+        },
+        "s3SchemaVersion": "1.0"
+      },
+      "responseElements": {
+        "x-amz-id-2": "RJkIYiJY4rRluSVsr7QGbdSOZ1rTr7HqPv2e2fj3JWjR5jxaV2lRzObN689yceLB",
+        "x-amz-request-id": "2AD91E941D55A902"
+      },
+      "awsRegion": "us-east-1",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AIDAI2OUEFWTW3DXTQZ4K"
+      },
+      "eventSource": "aws:s3"
+    }
+  ]
+}

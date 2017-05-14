@@ -11,7 +11,7 @@ class User(Model):
 
     class Meta:
         table_name = 'User'
-        region = 'us-east-1'
+        region = 'us-east-2'
 
     username = UnicodeAttribute(hash_key=True)
     email = UnicodeAttribute()
